@@ -156,7 +156,9 @@ sClient ReadNewClientByAccountNumber() {
     {
         cout << "Enter Account Number? ";
         // Usage of std::ws will extract all the whitespace character
-        getline(cin >> ws, AccountNumber);
+        cin >> ws; // clear whitespace
+        getline(cin, AccountNumber);
+        //getline(cin >> ws, AccountNumber);
 
         if (FindClientByAccountNumber(AccountNumber, vClients, Client))
         {
